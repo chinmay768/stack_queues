@@ -41,6 +41,6 @@ public class NextGreaterElement {
         int[] arr = {6, 0, 8, 1, 3};
 
         System.out.println(Arrays.toString(nextGreaterElementNaive(arr)));
-//        System.out.println(Arrays.toString(nextGreaterElement(arr)));
+        System.out.println(Arrays.toString(nextGreaterElement(arr)));
     }
 }
