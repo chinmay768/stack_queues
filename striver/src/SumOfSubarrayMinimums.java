@@ -51,12 +51,26 @@ public class SumOfSubarrayMinimums {
         return total;
     }
 
+    public static int minimumSumNaive(int[] arr){
+        int sum = 0;
+        int mod = (int) 1e9 + 7;
 
+        for(int i = 0; i < arr.length; i++){
+            int min = arr[i];
+            for(int j = i; j < arr.length; j++){
+                min = Math.min(min, arr[j]);
+                sum = (sum + min) % mod;
+            }
+
+        }
+
+        return sum;
+    }
 
     public static void main(String[] args) {
         int[] arr = {11,81,94,43,3};
 
-        int mininumSum = mininumSum(arr);
+        int mininumSum = minimumSumNaive(arr);
         System.out.println(mininumSum);
 
     }
