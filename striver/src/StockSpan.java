@@ -11,6 +11,7 @@ public class StockSpan {
         }
     }
    Stack<Pair> stack;
+    int index = -1;
 
 //   List<Integer> list;
     public StockSpan() {
@@ -32,11 +33,13 @@ public class StockSpan {
 //    }
 
     public int next(int price) {
-        int span = 1;
+        index++;
         while (!stack.isEmpty() && stack.peek().value <= price)
-            span += stack.pop().idx;
-        stack.push(new Pair(price, span));
-        return span;
+            stack.pop();
+
+        int ans = index - (stack.isEmpty()? -1 : stack.peek().idx);
+        stack.push(new Pair(price, index));
+        return ans;
     }
 }
 
