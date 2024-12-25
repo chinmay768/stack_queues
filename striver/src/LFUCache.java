@@ -86,9 +86,9 @@ public class LFUCache {
     }
 
     private static class DoublyLinkedList {
-        // Node these variables must me private final and not static or else it won't work
-        private final Node head;
-        private final Node tail;
+        // Node these variables should not be static or else it won't work
+        Node head;
+        Node tail;
 
         DoublyLinkedList(){
             head = new Node(-1, -1);
